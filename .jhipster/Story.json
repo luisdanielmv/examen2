@@ -1,0 +1,62 @@
+{
+    "name": "Story",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "sprint",
+            "otherEntityName": "sprint",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "students",
+            "otherEntityName": "student",
+            "otherEntityRelationshipName": "story"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "reviews",
+            "otherEntityName": "review",
+            "otherEntityRelationshipName": "story"
+        }
+    ],
+    "changelogDate": "20190417221935",
+    "entityTableName": "story",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

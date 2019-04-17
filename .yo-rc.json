@@ -1,0 +1,33 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.cenfotec.examen2"
+    },
+    "jhipsterVersion": "5.7.2",
+    "applicationType": "monolith",
+    "baseName": "examen2",
+    "packageName": "com.cenfotec.examen2",
+    "packageFolder": "com/cenfotec/examen2",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MjM2MjJjZjgxNzY3OTVhMmE5NmM2NDc0MjA3NTI2ZmQ0ZTg1ZGE0NmZlNzljNzRiNzI4NmE5MGI5NWQ2YzZiNTk2ZDJmZjQ3YTM2OTMxMTkyMTI3NTI1MDg0ZmE4YjcyMDgzMWYzYWRiYjEzMmNhNjY2MTdjZjk0NWY3MmNjM2U=",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": false
+  }
+}

@@ -1,0 +1,70 @@
+entity Period {
+	startDate LocalDate required,
+    endDate LocalDate required,
+    name String required
+}
+
+entity Project {
+	name String required,
+    numStudent Integer required,
+    schedule String required,
+    status String required
+}
+
+entity Team {
+	name String required,
+    status String required
+}
+
+entity Sprint {
+	name String required,
+    startDate LocalDate required,
+    endDate LocalDate required,
+    status String required
+}
+
+entity Student {
+	name String required,
+	lastName String required,
+	role String required,
+	status String required
+}
+
+entity Story {
+	code String required,
+    name String required,
+	description String required,
+    status String required
+}
+
+entity Review {
+	timestamp LocalDate,
+	comment String,
+	status String
+}
+
+relationship ManyToOne {
+	Project{period} to Period{projects},
+}
+relationship ManyToOne {
+	Team{project} to Project{teams},
+}
+relationship ManyToOne {
+	Sprint{team} to Team{sprints},
+}
+relationship ManyToOne {
+	Story{sprint} to Sprint{stories},
+}
+relationship ManyToOne {
+	Student{team} to Team{students},
+}
+relationship ManyToOne {
+	Student{story} to Story{students},
+}
+relationship ManyToOne {
+	Review{story} to Story{reviews},
+}
+
+paginate all with pagination
+
+service all with serviceImpl
