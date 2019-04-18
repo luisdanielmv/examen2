@@ -5,7 +5,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DBRef;
-import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -21,19 +20,15 @@ public class Student implements Serializable {
     @Id
     private String id;
 
-    @NotNull
     @Field("name")
     private String name;
 
-    @NotNull
     @Field("last_name")
     private String lastName;
 
-    @NotNull
     @Field("role")
     private String role;
 
-    @NotNull
     @Field("status")
     private String status;
 

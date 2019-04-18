@@ -135,40 +135,6 @@ public class TeamResourceIntTest {
     }
 
     @Test
-    public void checkNameIsRequired() throws Exception {
-        int databaseSizeBeforeTest = teamRepository.findAll().size();
-        // set the field null
-        team.setName(null);
-
-        // Create the Team, which fails.
-
-        restTeamMockMvc.perform(post("/api/teams")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(team)))
-            .andExpect(status().isBadRequest());
-
-        List<Team> teamList = teamRepository.findAll();
-        assertThat(teamList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    public void checkStatusIsRequired() throws Exception {
-        int databaseSizeBeforeTest = teamRepository.findAll().size();
-        // set the field null
-        team.setStatus(null);
-
-        // Create the Team, which fails.
-
-        restTeamMockMvc.perform(post("/api/teams")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(team)))
-            .andExpect(status().isBadRequest());
-
-        List<Team> teamList = teamRepository.findAll();
-        assertThat(teamList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
     public void getAllTeams() throws Exception {
         // Initialize the database
         teamRepository.save(team);

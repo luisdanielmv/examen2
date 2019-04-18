@@ -16,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -49,7 +48,7 @@ public class SprintResource {
      */
     @PostMapping("/sprints")
     @Timed
-    public ResponseEntity<Sprint> createSprint(@Valid @RequestBody Sprint sprint) throws URISyntaxException {
+    public ResponseEntity<Sprint> createSprint(@RequestBody Sprint sprint) throws URISyntaxException {
         log.debug("REST request to save Sprint : {}", sprint);
         if (sprint.getId() != null) {
             throw new BadRequestAlertException("A new sprint cannot already have an ID", ENTITY_NAME, "idexists");
@@ -71,7 +70,7 @@ public class SprintResource {
      */
     @PutMapping("/sprints")
     @Timed
-    public ResponseEntity<Sprint> updateSprint(@Valid @RequestBody Sprint sprint) throws URISyntaxException {
+    public ResponseEntity<Sprint> updateSprint(@RequestBody Sprint sprint) throws URISyntaxException {
         log.debug("REST request to update Sprint : {}", sprint);
         if (sprint.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");

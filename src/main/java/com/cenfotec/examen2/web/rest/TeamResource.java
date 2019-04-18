@@ -16,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -49,7 +48,7 @@ public class TeamResource {
      */
     @PostMapping("/teams")
     @Timed
-    public ResponseEntity<Team> createTeam(@Valid @RequestBody Team team) throws URISyntaxException {
+    public ResponseEntity<Team> createTeam(@RequestBody Team team) throws URISyntaxException {
         log.debug("REST request to save Team : {}", team);
         if (team.getId() != null) {
             throw new BadRequestAlertException("A new team cannot already have an ID", ENTITY_NAME, "idexists");
@@ -71,7 +70,7 @@ public class TeamResource {
      */
     @PutMapping("/teams")
     @Timed
-    public ResponseEntity<Team> updateTeam(@Valid @RequestBody Team team) throws URISyntaxException {
+    public ResponseEntity<Team> updateTeam(@RequestBody Team team) throws URISyntaxException {
         log.debug("REST request to update Team : {}", team);
         if (team.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");

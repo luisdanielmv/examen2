@@ -1,40 +1,40 @@
 entity Period {
-	startDate LocalDate required,
-    endDate LocalDate required,
-    name String required
+	startDate LocalDate,
+    endDate LocalDate,
+    name String
 }
 
 entity Project {
-	name String required,
-    numStudent Integer required,
-    schedule String required,
-    status String required
+	name String,
+    numStudent Integer,
+    schedule String,
+    status String
 }
 
 entity Team {
-	name String required,
-    status String required
+	name String,
+    status String
 }
 
 entity Sprint {
-	name String required,
-    startDate LocalDate required,
-    endDate LocalDate required,
-    status String required
+	name String,
+    startDate LocalDate,
+    endDate LocalDate,
+    status String
 }
 
 entity Student {
-	name String required,
-	lastName String required,
-	role String required,
-	status String required
+	name String,
+	lastName String,
+	role String,
+	status String
 }
 
 entity Story {
-	code String required,
-    name String required,
-	description String required,
-    status String required
+	code String,
+    name String,
+	description String,
+    status String
 }
 
 entity Review {

@@ -6,7 +6,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DBRef;
-import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -24,11 +23,9 @@ public class Team implements Serializable {
     @Id
     private String id;
 
-    @NotNull
     @Field("name")
     private String name;
 
-    @NotNull
     @Field("status")
     private String status;
 

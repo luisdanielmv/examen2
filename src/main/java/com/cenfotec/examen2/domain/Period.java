@@ -5,7 +5,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DBRef;
-import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -24,15 +23,12 @@ public class Period implements Serializable {
     @Id
     private String id;
 
-    @NotNull
     @Field("start_date")
     private LocalDate startDate;
 
-    @NotNull
     @Field("end_date")
     private LocalDate endDate;
 
-    @NotNull
     @Field("name")
     private String name;
 

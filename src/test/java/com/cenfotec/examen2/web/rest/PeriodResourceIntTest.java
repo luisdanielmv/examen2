@@ -142,57 +142,6 @@ public class PeriodResourceIntTest {
     }
 
     @Test
-    public void checkStartDateIsRequired() throws Exception {
-        int databaseSizeBeforeTest = periodRepository.findAll().size();
-        // set the field null
-        period.setStartDate(null);
-
-        // Create the Period, which fails.
-
-        restPeriodMockMvc.perform(post("/api/periods")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(period)))
-            .andExpect(status().isBadRequest());
-
-        List<Period> periodList = periodRepository.findAll();
-        assertThat(periodList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    public void checkEndDateIsRequired() throws Exception {
-        int databaseSizeBeforeTest = periodRepository.findAll().size();
-        // set the field null
-        period.setEndDate(null);
-
-        // Create the Period, which fails.
-
-        restPeriodMockMvc.perform(post("/api/periods")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(period)))
-            .andExpect(status().isBadRequest());
-
-        List<Period> periodList = periodRepository.findAll();
-        assertThat(periodList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    public void checkNameIsRequired() throws Exception {
-        int databaseSizeBeforeTest = periodRepository.findAll().size();
-        // set the field null
-        period.setName(null);
-
-        // Create the Period, which fails.
-
-        restPeriodMockMvc.perform(post("/api/periods")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(period)))
-            .andExpect(status().isBadRequest());
-
-        List<Period> periodList = periodRepository.findAll();
-        assertThat(periodList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
     public void getAllPeriods() throws Exception {
         // Initialize the database
         periodRepository.save(period);

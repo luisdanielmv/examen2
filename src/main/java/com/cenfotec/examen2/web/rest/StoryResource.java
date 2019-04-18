@@ -16,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -49,7 +48,7 @@ public class StoryResource {
      */
     @PostMapping("/stories")
     @Timed
-    public ResponseEntity<Story> createStory(@Valid @RequestBody Story story) throws URISyntaxException {
+    public ResponseEntity<Story> createStory(@RequestBody Story story) throws URISyntaxException {
         log.debug("REST request to save Story : {}", story);
         if (story.getId() != null) {
             throw new BadRequestAlertException("A new story cannot already have an ID", ENTITY_NAME, "idexists");
@@ -71,7 +70,7 @@ public class StoryResource {
      */
     @PutMapping("/stories")
     @Timed
-    public ResponseEntity<Story> updateStory(@Valid @RequestBody Story story) throws URISyntaxException {
+    public ResponseEntity<Story> updateStory(@RequestBody Story story) throws URISyntaxException {
         log.debug("REST request to update Story : {}", story);
         if (story.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");

@@ -16,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -49,7 +48,7 @@ public class PeriodResource {
      */
     @PostMapping("/periods")
     @Timed
-    public ResponseEntity<Period> createPeriod(@Valid @RequestBody Period period) throws URISyntaxException {
+    public ResponseEntity<Period> createPeriod(@RequestBody Period period) throws URISyntaxException {
         log.debug("REST request to save Period : {}", period);
         if (period.getId() != null) {
             throw new BadRequestAlertException("A new period cannot already have an ID", ENTITY_NAME, "idexists");
@@ -71,7 +70,7 @@ public class PeriodResource {
      */
     @PutMapping("/periods")
     @Timed
-    public ResponseEntity<Period> updatePeriod(@Valid @RequestBody Period period) throws URISyntaxException {
+    public ResponseEntity<Period> updatePeriod(@RequestBody Period period) throws URISyntaxException {
         log.debug("REST request to update Period : {}", period);
         if (period.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
