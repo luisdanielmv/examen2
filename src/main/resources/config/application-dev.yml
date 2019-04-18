@@ -36,8 +36,8 @@ spring:
             indent-output: true
     data:
         mongodb:
-            uri: ${MONGODB_URI:mongodb://localhost:27017/Examen2}
-            database: examen2
+            uri: ${MONGODB_URI:mongodb://localhost:27017/heroku_qlj98v4n}
+            database: heroku_qlj98v4n
     mail:
         host: localhost
         port: 25
