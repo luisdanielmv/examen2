@@ -36,7 +36,7 @@ spring:
             indent-output: true
     data:
         mongodb:
-            uri: mongodb://localhost:27017
+            uri: ${MONGODB_URI:mongodb://localhost:27017/Examen2}
             database: examen2
     mail:
         host: localhost
