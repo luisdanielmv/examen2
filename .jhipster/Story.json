@@ -35,7 +35,7 @@
             "relationshipType": "many-to-one",
             "relationshipName": "sprint",
             "otherEntityName": "sprint",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         },
         {
             "relationshipType": "one-to-many",

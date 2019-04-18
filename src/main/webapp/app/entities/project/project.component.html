@@ -19,7 +19,7 @@
             <th jhiSortBy="numStudent"><span>Num Student</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="schedule"><span>Schedule</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="status"><span>Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="period.id"><span>Period</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="period.name"><span>Period</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -32,7 +32,7 @@
                 <td>{{project.status}}</td>
                 <td>
                     <div *ngIf="project.period">
-                        <a [routerLink]="['../period', project.period?.id, 'view' ]" >{{project.period?.id}}</a>
+                        <a [routerLink]="['../period', project.period?.id, 'view' ]" >{{project.period?.name}}</a>
                     </div>
                 </td>
                 <td class="text-right">

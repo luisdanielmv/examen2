@@ -19,7 +19,7 @@
             "relationshipType": "many-to-one",
             "relationshipName": "story",
             "otherEntityName": "story",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         }
     ],
     "changelogDate": "20190417221936",

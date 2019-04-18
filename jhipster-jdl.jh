@@ -44,25 +44,25 @@ entity Review {
 }
 
 relationship ManyToOne {
-	Project{period} to Period{projects},
+	Project{period(name)} to Period{projects(name)},
 }
 relationship ManyToOne {
-	Team{project} to Project{teams},
+	Team{project(name)} to Project{teams(name)},
 }
 relationship ManyToOne {
-	Sprint{team} to Team{sprints},
+	Sprint{team(name)} to Team{sprints(name)},
 }
 relationship ManyToOne {
-	Story{sprint} to Sprint{stories},
+	Story{sprint(name)} to Sprint{stories(name)},
 }
 relationship ManyToOne {
-	Student{team} to Team{students},
+	Student{team(name)} to Team{students(name)},
 }
 relationship ManyToOne {
-	Student{story} to Story{students},
+	Student{story(name)} to Story{students(name)},
 }
 relationship ManyToOne {
-	Review{story} to Story{reviews},
+	Review{story(name)} to Story{reviews(comment)},
 }
 
 paginate all with pagination

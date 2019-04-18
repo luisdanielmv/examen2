@@ -35,7 +35,7 @@
             "relationshipType": "many-to-one",
             "relationshipName": "period",
             "otherEntityName": "period",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         },
         {
             "relationshipType": "one-to-many",

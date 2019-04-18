@@ -18,7 +18,7 @@
             <th jhiSortBy="timestamp"><span>Timestamp</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="comment"><span>Comment</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="status"><span>Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="story.id"><span>Story</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="story.name"><span>Story</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -30,7 +30,7 @@
                 <td>{{review.status}}</td>
                 <td>
                     <div *ngIf="review.story">
-                        <a [routerLink]="['../story', review.story?.id, 'view' ]" >{{review.story?.id}}</a>
+                        <a [routerLink]="['../story', review.story?.id, 'view' ]" >{{review.story?.name}}</a>
                     </div>
                 </td>
                 <td class="text-right">

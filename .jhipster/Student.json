@@ -35,13 +35,13 @@
             "relationshipType": "many-to-one",
             "relationshipName": "team",
             "otherEntityName": "team",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         },
         {
             "relationshipType": "many-to-one",
             "relationshipName": "story",
             "otherEntityName": "story",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         }
     ],
     "changelogDate": "20190417221934",

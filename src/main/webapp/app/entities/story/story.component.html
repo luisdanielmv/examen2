@@ -19,7 +19,7 @@
             <th jhiSortBy="name"><span>Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="description"><span>Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="status"><span>Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="sprint.id"><span>Sprint</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sprint.name"><span>Sprint</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -32,7 +32,7 @@
                 <td>{{story.status}}</td>
                 <td>
                     <div *ngIf="story.sprint">
-                        <a [routerLink]="['../sprint', story.sprint?.id, 'view' ]" >{{story.sprint?.id}}</a>
+                        <a [routerLink]="['../sprint', story.sprint?.id, 'view' ]" >{{story.sprint?.name}}</a>
                     </div>
                 </td>
                 <td class="text-right">
