@@ -59,7 +59,7 @@ relationship ManyToOne {
 	Student{team(name)} to Team{students(name)},
 }
 relationship ManyToOne {
-	Student{story(name)} to Story{students(name)},
+	Student{story(name)} to Story,
 }
 relationship ManyToOne {
 	Review{story(name)} to Story{reviews(comment)},

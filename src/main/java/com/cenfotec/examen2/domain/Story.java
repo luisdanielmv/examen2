@@ -41,9 +41,6 @@ public class Story implements Serializable {
     private Sprint sprint;
 
     @DBRef
-    @Field("students")
-    private Set<Student> students = new HashSet<>();
-    @DBRef
     @Field("reviews")
     private Set<Review> reviews = new HashSet<>();
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
@@ -118,31 +115,6 @@ public class Story implements Serializable {
 
     public void setSprint(Sprint sprint) {
         this.sprint = sprint;
-    }
-
-    public Set<Student> getStudents() {
-        return students;
-    }
-
-    public Story students(Set<Student> students) {
-        this.students = students;
-        return this;
-    }
-
-    public Story addStudents(Student student) {
-        this.students.add(student);
-        student.setStory(this);
-        return this;
-    }
-
-    public Story removeStudents(Student student) {
-        this.students.remove(student);
-        student.setStory(null);
-        return this;
-    }
-
-    public void setStudents(Set<Student> students) {
-        this.students = students;
     }
 
     public Set<Review> getReviews() {

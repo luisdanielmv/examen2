@@ -27,12 +27,6 @@
         },
         {
             "relationshipType": "one-to-many",
-            "relationshipName": "students",
-            "otherEntityName": "student",
-            "otherEntityRelationshipName": "story"
-        },
-        {
-            "relationshipType": "one-to-many",
             "relationshipName": "reviews",
             "otherEntityName": "review",
             "otherEntityRelationshipName": "story"
